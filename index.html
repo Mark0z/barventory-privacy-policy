@@ -62,7 +62,8 @@
 
     <div class="contact-info">
         <p><strong>Deweloper:</strong> Marcin Kozicki<br>
-        <strong>Kontakt:</strong> markoz@interia.com</p>
+        <strong>Kontakt:</strong> markoz@interia.com<br>
+        <strong>Lokalizacja:</strong> Polska, Unia Europejska</p>
     </div>
 
     <h2>2. ZBIERANE DANE</h2>
@@ -75,10 +76,10 @@
 
     <h3>2.2 Dane wprowadzane przez użytkownika:</h3>
     <ul>
-        <li><strong>Produkty:</strong> Nazwy produktów, kody kreskowe, zdjęcia produktów, współczynniki, wagi butelek</li>
+        <li><strong>Produkty:</strong> Nazwy produktów, kody kreskowe, zdjęcia produktów, wagi butelek</li>
         <li><strong>Remanenty:</strong> Dane inwentaryzacji (wagi, ilości, daty, typy korków, liczba butelek)</li>
-        <li><strong>Raporty:</strong> Generowane pliki PDF z wynikami inwentaryzacji zapisywane w folderze Downloads</li>
-        <li><strong>Ustawienia aplikacji:</strong> Preferencje użytkownika, stan onboardingu</li>
+        <li><strong>Raporty:</strong> Generowane pliki PDF z wynikami inwentaryzacji zapisywane w folderze Pobrane/Downloads</li>
+        <li><strong>Ustawienia aplikacji:</strong> Wybór motywu</li>
     </ul>
 
     <h3>2.3 Dane NIE zbierane:</h3>
@@ -95,9 +96,9 @@
 
     <h3>3.1 Dane lokalne:</h3>
     <ul>
-        <li>Przechowywane wyłącznie na Twoim urządzeniu w lokalnej bazie danych (Room Database)</li>
+        <li>Przechowywane wyłącznie na Twoim urządzeniu w lokalnej bazie danych</li>
         <li>Używane do funkcjonowania aplikacji</li>
-        <li>Synchronizowane z Firebase Firestore dla backup i synchronizacji między urządzeniami</li>
+        <li>Synchronizowane z Firebase Firestore</li>
     </ul>
 
     <h3>3.2 Weryfikacja wieku:</h3>
@@ -110,14 +111,12 @@
     <h3>3.3 Firebase Firestore:</h3>
     <ul>
         <li>Synchronizacja danych produktów między urządzeniami</li>
-        <li>Backup danych w chmurze Google (Europa)</li>
-        <li><strong>Dane są szyfrowane podczas przesyłania i przechowywania</strong></li>
         <li>Możliwość pracy offline z automatyczną synchronizacją</li>
     </ul>
 
     <h3>3.4 Generowanie raportów:</h3>
     <ul>
-        <li>Pliki PDF z inwentaryzacją zapisywane lokalnie w folderze Downloads</li>
+        <li>Pliki PDF z inwentaryzacją zapisywane lokalnie w folderze Pobrane/Downloads</li>
         <li>Używane wyłącznie na potrzeby użytkownika</li>
         <li>Nie są wysyłane ani udostępniane automatycznie</li>
     </ul>
@@ -173,30 +172,59 @@
 
     <h3>6.2 Przechowywanie danych:</h3>
     <ul>
-        <li><strong>Lokalne:</strong> Na Twoim urządzeniu (Room Database + pliki zdjęć)</li>
+        <li><strong>Lokalne:</strong> Na Twoim urządzeniu</li>
         <li><strong>Chmura:</strong> Firebase Firestore (szyfrowane, serwery w Europie)</li>
-        <li><strong>Raporty:</strong> Pliki PDF w folderze Downloads na urządzeniu</li>
-        <li><strong>Backup:</strong> Automatyczny backup przez Android (opcjonalny)</li>
+        <li><strong>Raporty:</strong> Pliki PDF w folderze Pobrane/Downloads na urządzeniu</li>
     </ul>
 
-    <h2>7. TWOJE PRAWA</h2>
-
-    <h3>7.1 Masz prawo do:</h3>
+    <h3>6.3 Lokalizacja serwerów:</h3>
     <ul>
-        <li><strong>Dostępu:</strong> Sprawdzenia jakie dane przechowujemy (dostępne w aplikacji)</li>
-        <li><strong>Usunięcia:</strong> Usunięcia wszystkich swoich danych</li>
-        <li><strong>Przenoszenia:</strong> Eksportu danych w formacie PDF</li>
-        <li><strong>Modyfikacji:</strong> Edycji wszystkich wprowadzonych danych</li>
+        <li><strong>Firebase Firestore:</strong> Serwery zlokalizowane w Europie (region europejski)</li>
+        <li><strong>Google Cloud:</strong> Dane przechowywane zgodnie z europejskimi standardami ochrony danych</li>
+        <li><strong>Transfer danych:</strong> Wszystkie transfery danych odbywają się w ramach UE/EOG</li>
     </ul>
 
-    <h3>7.2 Jak skorzystać z praw:</h3>
+    <h2>7. CZAS PRZECHOWYWANIA DANYCH</h2>
+
+    <h3>7.1 Dane lokalne:</h3>
     <ul>
-        <li><strong>Usunięcie danych:</strong> Odinstaluj aplikację lub wyczyść dane aplikacji w ustawieniach Android</li>
-        <li><strong>Eksport danych:</strong> Użyj funkcji eksportu PDF w aplikacji</li>
+        <li><strong>Produkty i remanenty:</strong> Przechowywane do momentu usunięcia przez użytkownika lub odinstalowania aplikacji</li>
+        <li><strong>Zdjęcia produktów:</strong> Przechowywane lokalnie do momentu usunięcia produktu</li>
+        <li><strong>Ustawienia aplikacji:</strong> Przechowywane do momentu wyczyszczenia danych aplikacji</li>
+        <li><strong>Weryfikacja wieku:</strong> Przechowywana lokalnie do momentu resetu lub odinstalowania</li>
+    </ul>
+
+    <h3>7.2 Dane w chmurze (Firebase):</h3>
+    <ul>
+        <li><strong>Synchronizacja:</strong> Dane synchronizowane z Firebase są przechowywane do momentu usunięcia z lokalnej bazy</li>
+        <li><strong>Backup:</strong> Dane w Firebase są automatycznie usuwane po 30 dniach od ostatniej synchronizacji</li>
+        <li><strong>Zdjęcia:</strong> Zdjęcia produktów w Firebase Storage są usuwane automatycznie po usunięciu produktu</li>
+    </ul>
+
+    <h3>7.3 Raporty PDF:</h3>
+    <ul>
+        <li><strong>Lokalne pliki:</strong> Przechowywane w folderze Downloads do momentu ręcznego usunięcia przez użytkownika</li>
+        <li><strong>Nie są synchronizowane:</strong> Raporty nie są wysyłane do chmury</li>
+    </ul>
+
+    <h2>8. TWOJE PRAWA</h2>
+
+    <h3>8.1 Masz prawo do:</h3>
+    <ul>
+        <li><strong>Dostępu:</strong> Sprawdzenia jakie dane przechowujemy (dostępne w aplikacji).</li>
+        <li><strong>Usunięcia:</strong> Usunięcia wszystkich swoich danych (wyczyszczenie danych aplikacji)</li>
+        <li><strong>Modyfikacji:</strong> Modyfikowanie istniejących remanentów</li>
+        <li><strong>Przenoszenia:</strong> Aplikacja nie umożliwia automatycznego eksportu danych</li>
+    </ul>
+
+    <h3>8.2 Jak skorzystać z praw:</h3>
+    <ul>
+        <li><strong>Usunięcie danych:</strong> Użyj opcji "Wyczyść dane aplikacji" w ustawieniach systemowych</li>
         <li><strong>Dostęp do danych:</strong> Wszystkie dane są widoczne w interfejsie aplikacji</li>
+        <li><strong>Modyfikacja danych:</strong> Edytuj remanenty bezpośrednio w aplikacji</li>
     </ul>
 
-    <h2>8. COOKIES I TRACKING</h2>
+    <h2>9. COOKIES I TRACKING</h2>
     <ul>
         <li><strong>Nie używamy cookies</strong> w aplikacji mobilnej</li>
         <li><strong>Nie używamy reklam</strong> ani trackerów reklamowych</li>
@@ -204,30 +232,54 @@
         <li><strong>Firebase Firestore</strong> nie zbiera danych analitycznych, służy wyłącznie do synchronizacji danych</li>
     </ul>
 
-    <h2>9. DANE DZIECI</h2>
+    <h2>10. DANE DZIECI</h2>
     <p>Aplikacja nie jest przeznaczona dla dzieci poniżej 18 roku życia. Aplikacja wymaga potwierdzenia pełnoletności przy pierwszym uruchomieniu zgodnie z przepisami dotyczącymi produktów alkoholowych. Nie zbieramy świadomie danych od osób niepełnoletnich.</p>
 
-    <h2>10. WERYFIKACJA WIEKU</h2>
+    <h2>11. WERYFIKACJA WIEKU</h2>
 
-    <h3>10.1 Wymagania:</h3>
+    <h3>11.1 Wymagania:</h3>
     <ul>
         <li>Aplikacja wymaga jednorazowego potwierdzenia pełnoletności</li>
         <li>Weryfikacja odbywa się przy pierwszym uruchomieniu aplikacji</li>
         <li>Informacja o weryfikacji przechowywana jest wyłącznie lokalnie na urządzeniu</li>
     </ul>
 
-    <h3>10.2 Podstawa prawna:</h3>
+    <h3>11.2 Podstawa prawna:</h3>
     <p>Weryfikacja wieku jest wymagana zgodnie z przepisami dotyczącymi aplikacji związanych z produktami alkoholowymi i jest stosowana wyłącznie w celu kontroli dostępu.</p>
 
-    <h2>11. ZMIANY W POLITYCE</h2>
+    <h2>12. ZGŁASZANIE NARUSZEŃ</h2>
+
+    <h3>12.1 Mechanizm zgłaszania:</h3>
+    <p>W przypadku podejrzenia naruszenia ochrony danych osobowych:</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> markoz@interia.com<br>
+        <strong>Temat:</strong> "Naruszenie RODO - Barventory"</p>
+    </div>
+
+    <h3>12.2 Co zawrzeć w zgłoszeniu:</h3>
+    <ul>
+        <li>Opis podejrzanego naruszenia</li>
+        <li>Data i czas zdarzenia</li>
+        <li>Rodzaj danych, których może dotyczyć naruszenie</li>
+        <li>Twoje dane kontaktowe (opcjonalnie)</li>
+    </ul>
+
+    <h3>12.3 Nasze zobowiązania:</h3>
+    <ul>
+        <li>Odpowiemy w ciągu 72 godzin od otrzymania zgłoszenia</li>
+        <li>Przeprowadzimy wewnętrzne dochodzenie</li>
+        <li>Poinformujemy o wynikach i podjętych działaniach</li>
+        <li>W razie potrzeby zgłosimy naruszenie do organu nadzorczego (PUODO)</li>
+    </ul>
+
+    <h2>13. ZMIANY W POLITYCE</h2>
     <p>O wszelkich zmianach w tej polityce poinformujemy:</p>
     <ul>
         <li>Aktualizacją w aplikacji</li>
         <li>Powiadomieniem w Google Play Store</li>
-        <li>Informacją dostępną w aplikacji</li>
     </ul>
 
-    <h2>12. ZGODNOŚĆ Z PRAWEM</h2>
+    <h2>14. ZGODNOŚĆ Z PRAWEM</h2>
     <p>Ta polityka jest zgodna z:</p>
     <ul>
         <li><strong>RODO</strong> (Rozporządzenie o Ochronie Danych Osobowych)</li>
@@ -236,7 +288,7 @@
         <li><strong>Przepisami dotyczącymi weryfikacji wieku dla aplikacji związanych z alkoholem</strong></li>
     </ul>
 
-    <h2>13. KONTAKT</h2>
+    <h2>15. KONTAKT</h2>
     <p>W przypadku pytań dotyczących tej polityki prywatności lub ochrony danych:</p>
     
     <div class="contact-info">
@@ -246,7 +298,7 @@
 
     <div class="footer">
         <p><strong>Ostatnia aktualizacja:</strong> 03.07.2025<br>
-        <strong>Wersja:</strong> 2.0</p>
+        <strong>Wersja:</strong> 3.1</p>
     </div>
 </body>
 </html>
